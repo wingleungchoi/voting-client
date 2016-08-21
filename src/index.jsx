@@ -8,3 +8,4 @@ ReactDOM.render(
   <Voting pair={pair} hasVoted="Trainspotting" />,
   document.getElementById('app')
 );
+
