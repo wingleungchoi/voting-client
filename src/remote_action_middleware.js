@@ -1,4 +1,4 @@
-export default socket => next => action => {
+export default socket => store => next => action => {
   if (action.meta && action.meta.remote) {
     socket.emit('action', action);
   }
@@ -18,4 +18,4 @@ export default function(store) {
 this nested function is called currying.
 e.g. f(x, y) = xy
 f(2, y) = 2y
-/*
+*/

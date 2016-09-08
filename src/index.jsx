@@ -16,15 +16,15 @@ const createStoreWithMiddleware = applyMiddleware(
 )(createStore);
 const store = createStoreWithMiddleware(reducer);
 
-const socket = io(`${location.protocol}//${location.hostname}:8090`);
+const socket = io('http://localhost:8090');//`${location.protocol}//${location.hostname}:8090`);
 socket.on('state', state =>
   store.dispatch(setState(state))
 );
 
-const routes = <Route components={App}>
-  <Route path="/results" components={ResultsContainer}/>
-  <Route path="/" component={Voting}/>
-</Route>
+const routes = <Route component={App}>
+  <Route path="/results" component={ResultsContainer}/>
+  <Route path="/" component={VotingContainer}/>
+</Route>;
 
 ReactDOM.render(
   <Provider store={store}>
