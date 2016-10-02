@@ -10,6 +10,9 @@ export const Results = React.createClass({
     return this.props.pair || [];
   },
   getVotes: function(entry) {
+console.log("====================================");
+console.log(this);
+console.log("====================================");
     if (this.props.tally && this.props.tally.has(entry)) {
       return this.props.tally.get(entry);
     }
@@ -34,6 +37,13 @@ export const Results = React.createClass({
                 className="next"
                 onClick={this.props.next}>
           Next
+        </button>
+      </div>
+      <div className="management">
+        <button ref="restart"
+                className="restart"
+                onClick={this.props.restart}>
+          Restart
         </button>
       </div>
     </div>;
